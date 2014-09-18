@@ -1,0 +1,2 @@
+kidaptive-ios-sdk
+=================
