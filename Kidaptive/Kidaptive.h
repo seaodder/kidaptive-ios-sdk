@@ -42,29 +42,61 @@
            failure:(void(^)(NSError *error))failure;
 
 
+/**
+ * Retrieve active user 
+ * 
+ */
 - (void)getUserWithSuccess:^(KidaptiveUser *kidaptiveUser)
                    failure:(void(^)(NSError *error))failure;
 
-- (void)updateUser:^(KidaptiveUser *kidaptiveUser)
+/**
+ * Update active user 
+ * @param KidaptiveUser  Kidaptive User object
+ * 
+ */
+- (void)updateUser:(KidaptiveUser*)user
         failure:(void(^)(NSError *error))failure;
 
+/**
+ * Creates a new learner  
+ * @param KidaptiveLearner  Kidaptive User object
+ */
 - (void)createLearner:^(kidaptiveLearner *kidaptiveLearner)
               failure:(void(^)(NSError *error))failure;
 
 
+/**
+ * Retrieve learners  
+ * @param KidaptiveLearner  Kidaptive User object
+ */
 - (void)listLearnerWithSuccess:^(NSArray *kidaptivelearners)
                        failure:(void(^)(NSError *error))failure;
 
+/**
+ * Update learner  
+ * @param KidaptiveLearner  Kidaptive User object
+ */
 - (void)updateLearner:(kidaptiveLearner*) kidaptiveLearner
               failure:(void(^)(NSError *error))failure;
 
+/**
+ * Delete learner  
+ * @param KidaptiveLearner  Kidaptive User object
+ */
 - (void)deleteLearner:(kidaptiveLearner*) kidaptiveLearner
               failure:(void(^)(NSError *error))failure;
 
+/**
+ * Retrieve Abilities for learner  
+ * @param KidaptiveLearner  Kidaptive User object
+ */
 - (NSDictionary* ) getAbilitiesForLearner:(KidaptiveLearner*) kidaptiveLearner withCategories:(NSArray*) categories;
 
 
-
+/**
+ * Report Evidence for learner 
+ * @param KidaptiveLearner  Kidaptive User object
+ */
 - (void) reportEvidenceforLearner:(KidaptiveLearner*) kidaptiveLearner evidence:(KidaptiveEvidence)evidence;
 
 
