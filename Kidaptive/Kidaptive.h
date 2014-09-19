@@ -18,13 +18,29 @@
 
 @property(nonatomic, weak) id<KidaptiveDelegate> kidaptiveDelegate;
 
+
+/**
+ * Initializes an instance of Kidaptive with the user credentials provided. 
+ * @param username  The user email address
+ * @param password  The user password
+ * @param delegate  The delegate of the Kidaptive instance
+ */
+ 
 -(Kidaptive *)initWithUsername:(NSString*)username
                      password:(NSArray*)password
                      delegate:(id<KidaptiveDelegate>)delegate;
 
 
+/**
+ * Creates a new user an instance of Kidaptive with the user credentials provided. 
+ * @param KidaptiveUser  Kidaptive User object
+ * @param password  The user password
+ * @param delegate  The delegate of the Kidaptive instance
+ */
+ 
 - (void)createUser:(KidaptiveUser*)user
            failure:(void(^)(NSError *error))failure;
+
 
 - (void)getUserWithSuccess:^(KidaptiveUser *kidaptiveUser)
                    failure:(void(^)(NSError *error))failure;
